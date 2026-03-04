@@ -44,7 +44,7 @@ def get_history_range(days: int = Query(365, ge=1, le=365)):
 
         for date, row in combined.iterrows():
             result.append({
-                "date": date,
+                "date": date.strftime("%Y-%m-%d"),
                 "sar_inr": round(row["SAR_INR"], 4),
                 "gold_inr_22k_10g": round(row["GOLD_INR_22K_10G"], 2)
             })
