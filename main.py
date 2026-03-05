@@ -6,7 +6,7 @@ from datetime import datetime
 app = FastAPI()
 
 @app.get("/history-range")
-def get_history_range(days: int = Query(365, ge=1, le=365)):
+def get_history_range(days: int = Query(400, ge=1, le=400)):
 
     try:
         # Bulk fetch using period (more reliable than start/end)
